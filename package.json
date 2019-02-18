@@ -1,0 +1,28 @@
+{
+    "name": "maqe-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon server.js",
+        "db:init": "./start_db.sh && sleep 5 && yarn db:migrate && yarn db:seed",
+        "db:migrate": "sequelize db:migrate",
+        "db:seed": "sequelize db:seed:all"
+    },
+    "dependencies": {
+        "apollo-server-express": "2.4.0",
+        "body-parser": "1.18.3",
+        "config": "3.0.1",
+        "express": "4.16.4",
+        "graphql": "14.1.1",
+        "js-yaml": "3.12.1",
+        "lodash": "4.17.11",
+        "pg": "7.8.0",
+        "sequelize": "4.42.0"
+    },
+    "devDependencies": {
+        "faker": "^4.1.0",
+        "nodemon": "^1.18.10",
+        "sequelize-cli": "^5.4.0"
+    }
+}
