@@ -1,0 +1,7 @@
+app:
+  port: PORT
+database:
+  host: DATABASE_HOST
+  name: DATABASE_NAME
+  username: DATABASE_USERNAME
+  password: DATABASE_PASSWORD
