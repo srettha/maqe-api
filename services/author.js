@@ -3,7 +3,7 @@ const { Author } = require('../models');
 /**
  * @public
  * @param {Object} queryObj
- * @returns {Object}
+ * @returns {Promise<Object>}
  */
 async function createAuthor(queryObj) {
     const author = await Author.create(queryObj);
@@ -13,7 +13,7 @@ async function createAuthor(queryObj) {
 /**
  * @public
  * @param {String} id
- * @returns {Object}
+ * @returns {Promise<Object>}
  */
 async function deleteAuthor(id) {
     const author = await Author.findById(id);
@@ -28,7 +28,7 @@ async function deleteAuthor(id) {
 /**
  * @public
  * @param {String} id
- * @returns {Object}
+ * @returns {Promise<Object>}
  */
 async function getAuthor(id) {
     const author = await Author.findById(id);
@@ -44,7 +44,7 @@ async function getAuthor(id) {
  * @param {Object} authorPagination
  * @param {Number=1} authorPagination.page
  * @param {Number=5} authorPagination.pageSize
- * @returns {Array<Object>}
+ * @returns {Promise<Array<Object>>}
  */
 async function getAuthors({ page, pageSize } = { page: 1, pageSize: 5 }) {
     const authors = await Author.findAll({
@@ -59,7 +59,7 @@ async function getAuthors({ page, pageSize } = { page: 1, pageSize: 5 }) {
  * @public
  * @param {String} id
  * @param {Object} queryObj
- * @returns {Object}
+ * @returns {Promise<Object>}
  */
 async function updateAuthor(id, queryObj) {
     const [count, author] = await Author.update(queryObj, {
