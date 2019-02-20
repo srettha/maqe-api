@@ -1,5 +1,5 @@
 module.exports = {
-    up: (queryInterface, Sequelize) => {
+    up: (queryInterface) => {
         return queryInterface.bulkInsert('posts', [
             {
                 title: 'Let\'s see this awesome post!',
