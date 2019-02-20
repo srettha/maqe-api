@@ -7,8 +7,8 @@ const AuthorResolver = {
     },
     Mutation: {
         createAuthor: (_root, { authorInput }) => authorService.createAuthor(authorInput),
-        updateAuthor: (_root, { id, authorInput }) => authorService.updateAuthor(id, authorInput),
         deleteAuthor: (_root, { id }) => authorService.deleteAuthor(id),
+        updateAuthor: (_root, { id, authorInput }) => authorService.updateAuthor(id, authorInput),
     },
 };
 
