@@ -15,7 +15,6 @@ const AuthorTypeDefs = gql`
         role: String!
         place: String!
         avatarUrl: String!
-        # posts: [Post!]!
     }
 
     extend type Query {

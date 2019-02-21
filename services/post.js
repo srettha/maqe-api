@@ -8,7 +8,11 @@ const { Author, Post } = require('../models');
  * @returns {Promise<Object>}
  */
 async function createPost(queryObj) {
+    const authors = _.get(queryObj, 'authors', []);
+
     const post = await Post.create(_.omit(queryObj, 'authors'));
+    await post.addAuthors(authors);
+
     return post;
 }
 
