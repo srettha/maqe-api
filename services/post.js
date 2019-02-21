@@ -1,4 +1,6 @@
-const { Post } = require('../models');
+const _ = require('lodash');
+
+const { Author, Post } = require('../models');
 
 /**
  * @public
@@ -6,7 +8,7 @@ const { Post } = require('../models');
  * @returns {Promise<Object>}
  */
 async function createPost(queryObj) {
-    const post = await Post.create(queryObj);
+    const post = await Post.create(_.omit(queryObj, 'authors'));
     return post;
 }
 
@@ -31,7 +33,9 @@ async function deletePost(id) {
  * @returns {Promise<Object>}
  */
 async function getPost(id) {
-    const post = await Post.findById(id);
+    const post = await Post.findOne({
+        where: { id },
+    });
     if (!post) {
         throw new Error('Post not found');
     }
@@ -50,6 +54,26 @@ async function getPosts({ page, pageSize } = { page: 1, pageSize: 5 }) {
     const posts = await Post.findAll({
         limit: pageSize,
         offset: (page - 1) * pageSize,
+    });
+
+    return posts;
+}
+
+/**
+ * @public
+ * @param {String} id
+ * @returns {Promise<Object>}
+ */
+async function getPostsByAuthorId(id) {
+    const posts = await Post.findAll({
+        include: [
+            {
+                as: 'authors',
+                model: Author,
+                required: true,
+                where: { id },
+            },
+        ],
     });
 
     return posts;
@@ -78,5 +102,6 @@ module.exports = {
     deletePost,
     getPost,
     getPosts,
+    getPostsByAuthorId,
     updatePost,
 };

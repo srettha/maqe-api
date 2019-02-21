@@ -1,6 +1,10 @@
 const authorService = require('../../services/author');
+const postService = require('../../services/post');
 
 const AuthorResolver = {
+    Author: {
+        posts: ({ id }) => postService.getPostsByAuthorId(id),
+    },
     Query: {
         author: (_root, { id }) =>  authorService.getAuthor(id),
         authors: (_root, { authorPagination }) => authorService.getAuthors(authorPagination),

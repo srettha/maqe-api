@@ -1,4 +1,4 @@
-const { Author } = require('../models');
+const { Author, Post } = require('../models');
 
 /**
  * @public
@@ -31,9 +31,11 @@ async function deleteAuthor(id) {
  * @returns {Promise<Object>}
  */
 async function getAuthor(id) {
-    const author = await Author.findById(id);
+    const author = await Author.findOne({
+        where: { id },
+    });
     if (!author) {
-        throw new Error('Author not found');
+        throw new UserInputError('Author not found');
     }
 
     return author;
@@ -50,6 +52,26 @@ async function getAuthors({ page, pageSize } = { page: 1, pageSize: 5 }) {
     const authors = await Author.findAll({
         limit: pageSize,
         offset: (page - 1) * pageSize,
+    });
+
+    return authors;
+}
+
+/**
+ * @public
+ * @param {String} id
+ * @returns {Promise<Object>}
+ */
+async function getAuthorsByPostId(id) {
+    const authors = await Author.findAll({
+        include: [
+            {
+                as: 'posts',
+                model: Post,
+                required: true,
+                where: { id },
+            },
+        ],
     });
 
     return authors;
@@ -78,5 +100,6 @@ module.exports = {
     deleteAuthor,
     getAuthor,
     getAuthors,
+    getAuthorsByPostId,
     updateAuthor,
 };
