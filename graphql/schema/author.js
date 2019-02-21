@@ -7,7 +7,7 @@ const AuthorTypeDefs = gql`
         role: String!
         place: String!
         avatarUrl: String!
-        # posts: [Post!]!
+        posts: [Post!]!
     }
 
     input AuthorInput {
@@ -18,14 +18,9 @@ const AuthorTypeDefs = gql`
         # posts: [Post!]!
     }
 
-    input AuthorPagination {
-        page: Int
-        pageSize: Int
-    }
-
     extend type Query {
         author(id: Int!): Author
-        authors(authorPagination: AuthorPagination): [Author!]!
+        authors(authorPagination: Pagination): [Author!]!
     }
 
     extend type Mutation {

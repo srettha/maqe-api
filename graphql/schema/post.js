@@ -3,7 +3,6 @@ const { gql } = require('apollo-server-express');
 const PostTypeDefs = gql`
     type Post {
         id: ID!
-        # authors: [Author!]!
         title: String!
         description: String!
         imageUrl: String!
@@ -11,26 +10,22 @@ const PostTypeDefs = gql`
         isDrafted: Boolean!
         createdAt: String!
         publishedAt: String
+        authors: [Author!]!
     }
 
     input PostInput {
-        # authors: [ID!]!
         title: String!
         description: String!
         imageUrl: String!
         isDeleted: Boolean
         isDrafted: Boolean!
         publishedAt: String
-    }
-
-    input PostPagination {
-        page: Int
-        pageSize: Int
+        authors: [ID!]!
     }
 
     extend type Query {
         post(id: Int!): Post
-        posts(postPagination: PostPagination): [Post!]!
+        posts(postPagination: Pagination): [Post!]!
     }
 
     extend type Mutation {

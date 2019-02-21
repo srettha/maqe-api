@@ -7,6 +7,11 @@ const Query = gql`
     type Query {
         _empty: String
     }
+
+    input Pagination {
+        page: Int
+        pageSize: Int
+    }
 `;
 
 const Mutation = gql`
