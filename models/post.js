@@ -40,5 +40,14 @@ module.exports = (sequelize, DataTypes) => {
         paranoid: true,
     });
 
+    Post.associate = ({ Author }) => {
+        Post.belongsToMany(Author, {
+            as: 'authors',
+            foreignKey: 'postId',
+            otherKey: 'authorId',
+            through: 'AuthorPosts',
+        });
+    };
+
     return Post;
 };
