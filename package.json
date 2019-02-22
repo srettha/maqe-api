@@ -1,7 +1,7 @@
 {
     "name": "maqe-api",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "server.js",
     "license": "MIT",
     "scripts": {
         "start": "nodemon server.js",
@@ -21,6 +21,8 @@
         "sequelize": "4.42.0"
     },
     "devDependencies": {
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-plugin-import": "^2.16.0",
         "faker": "^4.1.0",
         "nodemon": "^1.18.10",
         "sequelize-cli": "^5.4.0"
