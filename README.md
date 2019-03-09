@@ -22,7 +22,7 @@ It turns out with this small project. You get to learn a thing or two.
 
 ## References
 
-Interesting references thanks to @indianajone and @SiwakornS
+Interesting references thanks to [@indianajone](https://github.com/indianajone) and [@SiwakornS](https://github.com/SiwakornS)
 
 - [Solving N+1 problem with GraphQL](https://engineering.shopify.com/blogs/engineering/solving-the-n-1-problem-for-graphql-through-batching)
 
