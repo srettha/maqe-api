@@ -35,7 +35,7 @@ async function getAuthor(id) {
         where: { id },
     });
     if (!author) {
-        throw new UserInputError('Author not found');
+        throw new Error('Author not found');
     }
 
     return author;
