@@ -8,7 +8,8 @@ const _ = require('lodash');
  * @param {Number=1} i
  * @returns {Object | Array<Object>}
  */
-module.exports = function (model, props = {}, options = {}, i = 1) {
+module.exports = function modelFactory(model, props = {}, options = {}, i = 1) {
+    // eslint-disable-next-line global-require, import/no-dynamic-require
     const modelProps = require(`./models/${_.toLower(model.tableName)}`);
 
     const mergedProps = _.map(Array(i), () => modelProps(props));

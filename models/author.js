@@ -17,17 +17,17 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: sequelize.fn('NOW'),
             field: 'created_at',
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
         },
         updatedAt: {
             allowNull: false,
             defaultValue: sequelize.fn('NOW'),
             field: 'updated_at',
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
         },
         deletedAt: {
             field: 'deleted_at',
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
         },
     }, {
         tableName: 'authors',

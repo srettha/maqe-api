@@ -6,7 +6,7 @@ const AuthorResolver = {
         posts: ({ id }) => postService.getPostsByAuthorId(id),
     },
     Query: {
-        author: (_root, { id }) =>  authorService.getAuthor(id),
+        author: (_root, { id }) => authorService.getAuthor(id),
         authors: (_root, { authorPagination }) => authorService.getAuthors(authorPagination),
     },
     Mutation: {

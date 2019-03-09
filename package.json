@@ -8,6 +8,7 @@
         "db:init": "./start_db.sh && sleep 5 && yarn db:migrate && yarn db:seed",
         "db:migrate": "sequelize db:migrate",
         "db:seed": "sequelize db:seed:all",
+        "lint": "eslint --ext .js .",
         "test": "mocha ./tests/**/*.test.js"
     },
     "dependencies": {
@@ -29,7 +30,11 @@
         "faker": "^4.1.0",
         "mocha": "^6.0.1",
         "nodemon": "^1.18.10",
+        "pre-commit": "^1.2.2",
         "sequelize-cli": "^5.4.0",
         "sinon": "^7.2.4"
-    }
+    },
+    "pre-commit": [
+        "lint"
+    ],
 }

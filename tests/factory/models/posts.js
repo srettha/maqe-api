@@ -11,7 +11,7 @@ const _ = require('lodash');
  * @param {String} props.publishedAt
  * @returns {Object}
  */
-module.exports = function (props) {
+module.exports = (props) => {
     const isDrafted = faker.random.boolean();
 
     const defaultProps = {

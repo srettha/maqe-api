@@ -11,7 +11,7 @@ const _ = require('lodash');
  * @param {String} props.avatarUrl
  * @returns {Object}
  */
-module.exports = function (props) {
+module.exports = (props) => {
     const defaultProps = {
         id: faker.random.number(),
         name: `${faker.name.firstName()} ${faker.name.lastName()}`,
