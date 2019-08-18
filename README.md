@@ -31,7 +31,3 @@ Interesting references thanks to [@indianajone](https://github.com/indianajone) 
 - [Paypal takes on GraphQL](https://medium.com/paypal-engineering/graphql-a-success-story-for-paypal-checkout-3482f724fb53)
 
 - [Best practice from Paypal](https://medium.com/paypal-engineering/graphql-resolvers-best-practices-cd36fdbcef55?fbclid=IwAR0fPkP3VxusF9AA7U25FnAjqLVPV0mT0vYCSNdk47XxV09I3fxV_kQvtHg)
-
-## Remark
-
-This is not for production by any mean. It's just a fun project to test thing out. There are ton of things to improve.
