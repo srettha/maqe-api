@@ -36,6 +36,7 @@ jobs:
       - *yarn
       - *yarn_save_cache
       - run: yarn ci:test
+      - run: yarn ci:coverage
       - store_test_results:
           path: ./.reports
       - store_artifacts:
