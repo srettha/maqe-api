@@ -40,3 +40,9 @@ jobs:
           path: ./.reports
       - store_artifacts:
           path: ./.reports
+workflows:
+  version: 2
+  linters_and_tests:
+    jobs:
+      - run_linters
+      - run_unit_tests
