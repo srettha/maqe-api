@@ -1,5 +1,7 @@
 # MAQE API
 
+[![CircleCI](https://circleci.com/gh/thestrayed/maqe-api.svg?style=svg)](https://circleci.com/gh/thestrayed/maqe-api)  [![Coverage Status](https://coveralls.io/repos/github/thestrayed/maqe-api/badge.svg?branch=master)](https://coveralls.io/github/thestrayed/maqe-api?branch=master)
+
 It turns out that lurking through internet can get you some idea or something for you to do to practice yourself. This is part of an assignment from [MAQE](http://maqe.github.io/template.html). The nature of an assignment is not hard at all if you simply do it with `RESTFUL`. Since we have been hearing about `GraphQL` for years. This is a great oppurtunity to test the water.
 
 I utilize the following lib for `GraphQL`
