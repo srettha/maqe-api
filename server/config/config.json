@@ -1,6 +1,6 @@
 {
     "development": {
-        "host": "127.0.0.1",
+        "host": "maqe-db",
         "database": "postgres",
         "username": "postgres",
         "password": null,
