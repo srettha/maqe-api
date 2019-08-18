@@ -2,7 +2,7 @@ version: 2
 references:
   default_workspace: &default_workspace
     docker:
-      - image: circleci/node:12.6.0
+      - image: circleci/node
     working_directory: ~/repo/server
   yarn_restore_cache: &yarn_restore_cache
     restore_cache:
