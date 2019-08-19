@@ -54,6 +54,14 @@ query {
 }
 ```
 
+Here is the [collection](https://www.getpostman.com/collections/312eede5457e726e0f87) to for all the endpoints for this projects.
+
+- CRUD for `authors` along with its pagination
+
+- CRUD for `posts` along with its pagination
+
+**Remark since GraphQL recently supports by POSTMAN, you can only share the collection via link rather publishing doc to POSTMAN itself**
+
 ## References
 
 Interesting references thanks to [@indianajone](https://github.com/indianajone) and [@SiwakornS](https://github.com/SiwakornS)
