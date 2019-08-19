@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/thestrayed/maqe-api.svg?style=svg)](https://circleci.com/gh/thestrayed/maqe-api)  [![Coverage Status](https://coveralls.io/repos/github/thestrayed/maqe-api/badge.svg?branch=master)](https://coveralls.io/github/thestrayed/maqe-api?branch=master)
 
+## Background
+
 It turns out that lurking through internet can get you some idea or something for you to do to practice yourself. This is part of an assignment from [MAQE](http://maqe.github.io/template.html). The nature of an assignment is not hard at all if you simply do it with `RESTFUL`. Since we have been hearing about `GraphQL` for years. This is a great oppurtunity to test the water.
 
 I utilize the following lib for `GraphQL`
@@ -21,6 +23,36 @@ It turns out with this small project. You get to learn a thing or two.
 - No Browser cache by default, can be done with in memory cache (Redis or MemcacaheD) [DataLoader](https://www.apollographql.com/docs/apollo-server/features/data-sources.html#What-about-DataLoader)
 
 - You can setup `GraphQL` as middleman to call other services too with [REST Data sources](https://www.apollographql.com/docs/apollo-server/features/data-sources.html#REST-Data-Source)
+
+## Overview
+
+The system supposes to return list of `posts` in pagination manner. SO client can use that to render it.
+
+With this being built with `GraphQL` in mind, here is an endpoint on how to call it.
+
+Here is the structure of query to use to get `post` along with `authors`
+
+```graphql
+query {
+    posts(postPagination: {
+        page: 1,
+        pageSize: 10,
+    }) {
+        id
+        title
+        description
+        imageUrl
+        createdAt
+        authors {
+            id
+            name
+            role
+            place
+            avatarUrl
+        }
+    }
+}
+```
 
 ## References
 
