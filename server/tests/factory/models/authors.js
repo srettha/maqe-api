@@ -1,5 +1,4 @@
 const faker = require('faker');
-const _ = require('lodash');
 
 /**
  * @public
@@ -20,5 +19,8 @@ module.exports = (props) => {
         avatarUrl: faker.image.imageUrl(),
     };
 
-    return _.merge({}, defaultProps, props);
+    return {
+        ...defaultProps,
+        ...props,
+    };
 };
