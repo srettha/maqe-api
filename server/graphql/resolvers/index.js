@@ -1,10 +1,15 @@
-const _ = require('lodash');
-
 const AuthorResolver = require('./author');
 const PostResolver = require('./post');
 
-module.exports = _.merge(
-    {},
-    AuthorResolver,
-    PostResolver,
-);
+module.exports = {
+    ...AuthorResolver,
+    ...PostResolver,
+    Mutation: {
+        ...AuthorResolver.Mutation,
+        ...PostResolver.Mutation,
+    },
+    Query: {
+        ...AuthorResolver.Query,
+        ...PostResolver.Query,
+    },
+};
