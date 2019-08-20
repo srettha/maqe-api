@@ -26,7 +26,7 @@ It turns out with this small project. You get to learn a thing or two.
 
 ## Overview
 
-The system supposes to return list of `posts` in pagination manner. SO client can use that to render it.
+The system supposes to return list of `posts` along with its author in pagination manner. SO client can use that to render it.
 
 With this being built with `GraphQL` in mind, here is an endpoint on how to call it.
 
@@ -54,7 +54,7 @@ query {
 }
 ```
 
-Here is the [collection](https://www.getpostman.com/collections/312eede5457e726e0f87) to for all the endpoints for this projects.
+Here is the [collection](https://www.getpostman.com/collections/312eede5457e726e0f87) to for all the endpoints for this projects. You can import via link right away with this.
 
 - CRUD for `authors` along with its pagination
 
