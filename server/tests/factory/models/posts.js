@@ -1,5 +1,4 @@
 const faker = require('faker');
-const _ = require('lodash');
 
 /**
  * @public
@@ -22,5 +21,8 @@ module.exports = (props) => {
         publishedAt: isDrafted ? faker.date.past() : null,
     };
 
-    return _.merge({}, defaultProps, props);
+    return {
+        ...defaultProps,
+        ...props,
+    };
 };
