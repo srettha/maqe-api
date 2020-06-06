@@ -16,7 +16,7 @@
         "ci:coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls"
     },
     "dependencies": {
-        "apollo-server-express": "2.4.0",
+        "apollo-server-express": "2.14.2",
         "body-parser": "1.18.3",
         "config": "3.0.1",
         "express": "4.16.4",
